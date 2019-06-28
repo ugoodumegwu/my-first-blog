@@ -8,4 +8,8 @@ class IndexView(View):
     template_name = 'demo/index.html'
 
     def get(self, request):
-        return HttpResponse('This is a demo, that i have successfully deployed.')
+        text = """
+            I hoped you can see the navbar above, that means bootstrap and django work well together.
+            This is a way to see if bootrstrap css will work when deployed to python anwhere.
+        """
+        return render(request, self.template_name, {'text': text})
